@@ -52,17 +52,12 @@ Depois de instalar, você pode usar o comando `cliris` de qualquer lugar:
 ```bash
 cliris pink-terminal
 cliris orange-terminal
+cliris git-update-branches
 ```
 
 ## Comandos Disponíveis
 
 - `pink-terminal` - Aplica o tema rosa no terminal (Powerlevel10k)
 - `orange-terminal` - Aplica o tema laranja no terminal (Powerlevel10k)
-
-## Desenvolvimento
-
-Para trabalhar no código, instale em modo de desenvolvimento:
-
-```bash
-pip install -e .
-```
+- `git-update-branches` - atualiza suas branches locais removendo as órfãs e 
+deixando apenas as que existem remotamente

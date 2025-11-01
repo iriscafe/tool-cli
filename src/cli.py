@@ -1,6 +1,7 @@
 import argparse
 import sys
 from . import customzsh
+from . import gitcommands
 
 def execute_command(command):
     
@@ -16,6 +17,9 @@ def execute_command(command):
                 result = customzsh.orange_terminal()
                 print("Laranja não é o novo rosa, espero que você fique bem.")
                 return 0
+            case "git-update-branches":
+                result = gitcommands.git_prune_useless_branches()
+                return 0
             case _:
                 print(f"Comando desconhecido: {command}", file=sys.stderr)
                 return 1
@@ -25,14 +29,14 @@ def execute_command(command):
 
 def create_parser():
     parser = argparse.ArgumentParser(
-        description="CLI para executar comandos Docker",
+        description="cli para facilitar minha vida",
         prog="cliris"
     )
 
     parser.add_argument(
         "command",
-        choices=["pink-terminal", "orange-terminal"],
-        help="cli para facilitar minha vida"
+        choices=["pink-terminal", "orange-terminal","git-update-branches"],
+        help="se nao existe é porque não preciso ainda"
     )
     
     return parser
