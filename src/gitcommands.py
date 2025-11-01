@@ -5,17 +5,14 @@ def git_prune_useless_branches():
     try:
         subprocess.run(["git", "fetch", "-p"], check=True, capture_output=True)
         
-        # Obtém lista de branches locais (remove main)
         branches = list_local_branches()
         
-        # Se não tiver nada pra deletar, ok, acaba
         if not branches:
             print("✅ Nenhuma branch órfã encontrada.")
             return None
         
         deleted_count = 0
         
-        # Se tiver branches, tenta deletar cada uma
         for branch in branches:
             try:
                 subprocess.run(["git", "branch", "-D", branch], check=True, capture_output=True)
@@ -57,7 +54,6 @@ def list_local_branches():
                 if branch_name:
                     remote_branches.add(branch_name)
         
-        # Lista branches locais
         local_result = subprocess.run(
             ["git", "branch", "--format", "%(refname:short)"],
             check=True,
@@ -65,14 +61,12 @@ def list_local_branches():
             text=True
         )
         
-        # Extrai nomes das branches locais
         local_branches = [
             branch.strip() 
             for branch in local_result.stdout.strip().split('\n') 
             if branch.strip()
         ]
         
-        # Compara: se branch local não estiver nas remotas, é órfã
         orphan_branches = []
         for branch_local in local_branches:
             if branch_local not in remote_branches:

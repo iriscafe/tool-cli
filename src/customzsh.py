@@ -3,9 +3,6 @@ import sys
 import os
 from pathlib import Path
 
-# Tenta encontrar o diretório custom-files
-# Quando o pacote está instalado, os arquivos estarão em src/custom-files dentro do site-packages
-# Quando está em desenvolvimento, também estarão em src/custom-files
 CUSTOM_FILES_DIR = Path(__file__).parent / "custom-files"
 
 def pink_terminal():
