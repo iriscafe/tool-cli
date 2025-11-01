@@ -1,16 +1,15 @@
 import argparse
 import sys
-from . import docker
+from . import customzsh
 
 def execute_command(command):
-    """Executa o comando Docker especificado"""
-    # Normaliza o comando (aceita tanto hífen quanto underscore)
+    
     normalized_command = command.replace('_', '-')
     
     try:
         match normalized_command:
             case "pink-terminal":
-                result = customzsh.get_custom_zsh()
+                result = customzsh.pink_terminal()
                 print("Bem vinda de volta diva.")
                 return 0
             case "orange-terminal":
@@ -32,7 +31,7 @@ def create_parser():
 
     parser.add_argument(
         "command",
-        choices=["pink-terminal"],
+        choices=["pink-terminal", "orange-terminal"],
         help="cli para facilitar minha vida"
     )
     

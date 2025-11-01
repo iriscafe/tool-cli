@@ -1,6 +1,14 @@
 # Tool CLI - Cliris
 
-CLI para executar comandos Docker de forma simplificada.
+CLI para facilitar minha vida toda vez que eu mudar de notebook.
+
+## Requisitos
+
+- Python 3.10+
+- **zsh instalado** - Terminal shell necessário para executar os comandos
+- **Powerlevel10k instalado** - Framework de prompt para zsh (p10k)
+  - Para instalar o Powerlevel10k, consulte a [documentação oficial](https://github.com/romkatv/powerlevel10k)
+  - O Powerlevel10k deve estar configurado no seu `~/.zshrc`
 
 ## Instalação
 
@@ -42,21 +50,14 @@ pip3 install .
 Depois de instalar, você pode usar o comando `cliris` de qualquer lugar:
 
 ```bash
-cliris docker-ps
-cliris docker_images
-cliris docker-images
-cliris docker-network
-cliris docker-volume
+cliris pink-terminal
+cliris orange-terminal
 ```
-
-A CLI aceita tanto hífen (`-`) quanto underscore (`_`) nos nomes dos comandos.
 
 ## Comandos Disponíveis
 
-- `docker-ps` ou `docker_ps` - Lista containers em execução
-- `docker-images` ou `docker_images` - Lista imagens Docker
-- `docker-network` ou `docker_network` - Lista redes Docker
-- `docker-volume` ou `docker_volume` - Lista volumes Docker
+- `pink-terminal` - Aplica o tema rosa no terminal (Powerlevel10k)
+- `orange-terminal` - Aplica o tema laranja no terminal (Powerlevel10k)
 
 ## Desenvolvimento
 
@@ -65,11 +66,3 @@ Para trabalhar no código, instale em modo de desenvolvimento:
 ```bash
 pip install -e .
 ```
-
-Qualquer mudança no código será refletida imediatamente sem precisar reinstalar.
-
-## Requisitos
-
-- Python 3.10+
-- Docker instalado e em execução
-

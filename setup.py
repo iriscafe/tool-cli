@@ -7,6 +7,10 @@ setup(
     author="Iris",
     py_modules=[],
     packages=find_packages(),
+    include_package_data=True,
+    package_data={
+        "src": ["custom-files/*.zsh"],
+    },
     entry_points={
         "console_scripts": [
             "cliris=src.cli:main",
@@ -15,4 +19,3 @@ setup(
     python_requires=">=3.10",
     install_requires=[],
 )
-
