@@ -30,13 +30,28 @@ def execute_command(command):
 def create_parser():
     parser = argparse.ArgumentParser(
         description="cli para facilitar minha vida",
-        prog="cliris"
+        prog="lino-ci"
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+        Exemplos:
+        lino-ci pink-terminal
+        lino-ci orange-terminal
+        lino-ci git-update-branches
+        """
     )
 
     parser.add_argument(
         "command",
         choices=["pink-terminal", "orange-terminal","git-update-branches"],
-        help="se nao existe é porque não preciso ainda"
+        metavar="COMANDO",
+        help="""
+        pink-terminal - configura o terminal com o tema rosa
+        orange-terminal - configura o terminal com o tema laranja
+        git-update-branches - atualiza suas branches locais removendo as órfãs e 
+        deixando apenas as que existem remotamente
+
+        se o comando que procura não existe é porque não preciso ainda
+        """
     )
     
     return parser
