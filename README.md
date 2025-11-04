@@ -1,10 +1,12 @@
-# Tool CLI - Cliris
+# Tool CLI - lino-ci
 
 CLI para facilitar minha vida toda vez que eu mudar de notebook.
+Nome totalmente em homenagem a um colega de trabalho, não quer dizer
+que faça sentido com o contexto.
 
 ## Requisitos
 
-- Python 3.10+
+- a partir de Python 3.10+
 - **zsh instalado** - Terminal shell necessário para executar os comandos
 - **Powerlevel10k instalado** - Framework de prompt para zsh (p10k)
   - Para instalar o Powerlevel10k, consulte a [documentação oficial](https://github.com/romkatv/powerlevel10k)
@@ -20,7 +22,7 @@ Para instalar o pacote localmente em modo de desenvolvimento:
 pip3 install -e .
 ```
 
-Isso criará o comando `cliris` no seu sistema. Se o comando não for encontrado, você pode:
+Isso criará o comando `lino-ci` no seu sistema. Se o comando não for encontrado, você pode:
 
 **Opção 1: Adicionar ao PATH**
 
@@ -37,7 +39,7 @@ source ~/.zshrc
 
 **Opção 2: Usar o caminho completo**
 
-Use o caminho completo onde o script foi instalado (geralmente algo como `/Library/Frameworks/Python.framework/Versions/3.12/bin/cliris`)
+Use o caminho completo onde o script foi instalado (geralmente algo como `/Library/Frameworks/Python.framework/Versions/3.12/bin/lino-ci`)
 
 ### Instalação Normal
 
@@ -47,12 +49,12 @@ pip3 install .
 
 ## Uso
 
-Depois de instalar, você pode usar o comando `cliris` de qualquer lugar:
+Depois de instalar, você pode usar o comando `lino-ci` de qualquer lugar:
 
 ```bash
-cliris pink-terminal
-cliris orange-terminal
-cliris git-update-branches
+lino-ci pink-terminal
+lino-ci orange-terminal
+lino-ci git-update-branches
 ```
 
 ## Comandos Disponíveis
