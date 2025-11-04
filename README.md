@@ -37,7 +37,6 @@ Depois recarregue:
 source ~/.zshrc
 ```
 
-
 **Opção 2: Usar o caminho completo**
 
 Use o caminho completo onde o script foi instalado (geralmente algo como `/Library/Frameworks/Python.framework/Versions/3.12/bin/lino-ci`)
