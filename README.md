@@ -60,9 +60,8 @@ lino-ci git-update-branches
 
 ## Comandos Disponíveis
 
-- `color-terminal COR` - Aplica o tema com a cor especificada no terminal (Powerlevel10k)
+- `color-terminal COR` - Aplica o tema com a cor especificada ou random no terminal (Powerlevel10k)
   - Cores disponíveis: `laranja`, `rosa`, `azul`, `verde`, `amarelo`, `roxo`
   - Ou use um número de 0-255 para uma cor personalizada
-- `random-color` - Aplica uma cor aleatória no terminal
 - `git-update-branches` - atualiza suas branches locais removendo as órfãs e 
 deixando apenas as que existem remotamente
