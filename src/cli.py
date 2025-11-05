@@ -3,6 +3,37 @@ import sys
 from . import customzsh
 from . import gitcommands
 
+class CustomHelpFormatter(argparse.RawTextHelpFormatter):
+    def format_help(self):
+        
+        help_text = []
+        prog = self._prog
+        help_text.append(f"uso: {prog} COMANDO")
+        help_text.append("")
+        
+        help_text.append("cli totalmente egoísta para facilitar minha vida")
+        help_text.append("")
+        
+        help_text.append("COMANDO")
+        help_text.append("  pink-terminal              - configura o terminal com o tema rosa")
+        help_text.append("  orange-terminal            - configura o terminal com o tema laranja")
+        help_text.append("  git-update-branches        - atualiza suas branches locais removendo as órfãs")
+        help_text.append("                              e deixando apenas as que existem remotamente")
+        help_text.append("")
+        help_text.append("  se o comando que procura não existe é porque não preciso ainda")
+        help_text.append("")
+        
+        help_text.append("opções:")
+        help_text.append("  -h, --help                 mostra esta mensagem de ajuda e sai")
+        help_text.append("")
+        
+        help_text.append("Exemplos:")
+        help_text.append("  lino-ci pink-terminal")
+        help_text.append("  lino-ci orange-terminal")
+        help_text.append("  lino-ci git-update-branches")
+        
+        return '\n'.join(help_text)
+
 def execute_command(command):
     
     normalized_command = command.replace('_', '-')
@@ -29,29 +60,20 @@ def execute_command(command):
 
 def create_parser():
     parser = argparse.ArgumentParser(
-        description="cli para facilitar minha vida",
-        prog="lino-ci"
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-        Exemplos:
-        lino-ci pink-terminal
-        lino-ci orange-terminal
-        lino-ci git-update-branches
-        """
+        description="cli totalmente egoísta para facilitar minha vida",
+        prog="lino-ci",
+        formatter_class=CustomHelpFormatter,
+        epilog="""Exemplos:
+  lino-ci pink-terminal
+  lino-ci orange-terminal
+  lino-ci git-update-branches"""
     )
 
     parser.add_argument(
         "command",
         choices=["pink-terminal", "orange-terminal","git-update-branches"],
         metavar="COMANDO",
-        help="""
-        pink-terminal - configura o terminal com o tema rosa
-        orange-terminal - configura o terminal com o tema laranja
-        git-update-branches - atualiza suas branches locais removendo as órfãs e 
-        deixando apenas as que existem remotamente
-
-        se o comando que procura não existe é porque não preciso ainda
-        """
+        help=argparse.SUPPRESS
     )
     
     return parser
